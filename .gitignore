@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────
+# TERRAFORM
+# ─────────────────────────────────────────
+
+# Plugins y módulos descargados
+.terraform/
+
+# Archivos de estado local — NUNCA al repo
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform.tfstate.lock.info
+
+# Plan binario — puede contener secretos
+*.tfplan
+*.plan
+
+# Archivos de variables con secretos — CRÍTICO
+*.tfvars
+!terraform.tfvars.example
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# ─────────────────────────────────────────
+# AWS
+# ─────────────────────────────────────────
+.aws/
+credentials
+*.pem
+*.key
+
+# ─────────────────────────────────────────
+# SISTEMA OPERATIVO
+# ─────────────────────────────────────────
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# ─────────────────────────────────────────
+# EDITORES
+# ─────────────────────────────────────────
+
+# VSCode
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+
+# Vim
+*.swp
+*.swo
+
+# ─────────────────────────────────────────
+# PROYECTO
+# ─────────────────────────────────────────
+.env
+.env.local
+.env.*
