@@ -71,43 +71,11 @@ resource "aws_s3_bucket_lifecycle_configuration" "website" {
     id     = "cleanup-old-versions"
     status = "Enabled"
 
+    # Filter vacío = aplica a todos los objetos
+    filter {}
+
     noncurrent_version_expiration {
       noncurrent_days = 30
     }
   }
-}
-
-# ─────────────────────────────────────────
-# 6. Bucket Policy — La regla de seguridad
-#    Solo permite acceso desde CloudFront
-#    via OAC. Todo lo demás es denegado
-# ─────────────────────────────────────────
-resource "aws_s3_bucket_policy" "website" {
-  bucket = aws_s3_bucket.website.id
-
-  # Espera a que el bloqueo público esté
-  # aplicado antes de crear la policy
-  depends_on = [aws_s3_bucket_public_access_block.website]
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "AllowCloudFrontOAC"
-        Effect = "Allow"
-        Principal = {
-          Service = "cloudfront.amazonaws.com"
-        }
-        Action   = "s3:GetObject"
-        Resource = "${aws_s3_bucket.website.arn}/*"
-        Condition = {
-          StringEquals = {
-            # Solo acepta requests del CloudFront
-            # distribution correcto — no cualquiera
-            "AWS:SourceArn" = var.cloudfront_distribution_arn
-          }
-        }
-      }
-    ]
-  })
 }

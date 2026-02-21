@@ -1,3 +1,15 @@
+
+# modules/acm/main.tf
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
+  }
+}
+
+
 # modules/acm/main.tf
 # Solicita y valida el certificado SSL en ACM
 # Validación automática via Cloudflare DNS API

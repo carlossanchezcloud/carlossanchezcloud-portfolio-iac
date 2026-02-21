@@ -1,3 +1,14 @@
+
+# modules/cloudflare_dns/main.tf
+terraform {
+  required_providers {
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
+    }
+  }
+}
+
 # modules/cloudflare_dns/main.tf
 # Crea los registros DNS en Cloudflare
 # que apuntan el dominio a CloudFront
