@@ -36,9 +36,9 @@ resource "aws_iam_role" "github_actions_role" {
         }
         Action = "sts:AssumeRoleWithWebIdentity"
         Condition = {
-          StringEquals = {
+          StringLike = {
             # ⚠️ Reemplaza TU_USUARIO_GITHUB con tu usuario de GitHub
-            "token.actions.githubusercontent.com:sub" = "repo:TU_USUARIO_GITHUB/carlossanchezcloud-portfolio-iac:ref:refs/heads/main"
+            "token.actions.githubusercontent.com:sub" = "repo:carlossanchezcloud/carlossanchezcloud-portfolio-iac:ref:refs/heads/main"
             "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
           }
         }
