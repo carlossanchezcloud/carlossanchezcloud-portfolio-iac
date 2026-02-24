@@ -86,7 +86,21 @@ resource "aws_iam_policy" "github_actions_policy" {
           "s3:PutBucketPolicy",
           "s3:CreateBucket",
           "s3:GetLifecycleConfiguration",
-          "s3:PutLifecycleConfiguration"
+          "s3:PutLifecycleConfiguration",
+          "s3:GetBucketAcl",
+          "s3:PutBucketAcl",
+          "s3:GetBucketCORS",
+          "s3:PutBucketCORS",
+          "s3:GetBucketWebsite",
+          "s3:PutBucketWebsite",
+          "s3:GetBucketLogging",
+          "s3:GetBucketRequestPayment",
+          "s3:GetBucketTagging",
+          "s3:PutBucketTagging",
+          "s3:GetAccelerateConfiguration",
+          "s3:GetBucketObjectLockConfiguration",
+          "s3:GetBucketOwnershipControls",
+          "s3:PutBucketOwnershipControls"
         ]
         Resource = [
           "arn:aws:s3:::carlossanchezcloud-website-prod",
