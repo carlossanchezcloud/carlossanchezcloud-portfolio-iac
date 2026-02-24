@@ -83,21 +83,7 @@ resource "aws_iam_policy" "github_actions_policy" {
       {
         Sid    = "CloudFrontAccess"
         Effect = "Allow"
-        Action = [
-          "cloudfront:CreateDistribution",
-          "cloudfront:UpdateDistribution",
-          "cloudfront:GetDistribution",
-          "cloudfront:DeleteDistribution",
-          "cloudfront:TagResource",
-          "cloudfront:ListDistributions",
-          "cloudfront:CreateInvalidation",
-          "cloudfront:GetInvalidation",
-          "cloudfront:CreateOriginAccessControl",
-          "cloudfront:GetOriginAccessControl",
-          "cloudfront:DeleteOriginAccessControl",
-          "cloudfront:UpdateOriginAccessControl",
-          "cloudfront:ListOriginAccessControls"
-        ]
+        Action = ["cloudfront:*"]
         Resource = "*"
       },
 
