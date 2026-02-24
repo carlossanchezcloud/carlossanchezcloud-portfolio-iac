@@ -30,7 +30,6 @@ module "cloudfront" {
   certificate_arn    = module.acm.certificate_arn
   domain_aliases = [
     var.domain_name,
-    "www.${var.domain_name}"
   ]
 
   depends_on = [module.acm, module.s3]
@@ -70,11 +69,10 @@ resource "aws_s3_bucket_policy" "website" {
 # ─────────────────────────────────────────
 # 5. Módulo Cloudflare DNS
 # ─────────────────────────────────────────
-module "cloudflare_dns" {
+   module "cloudflare_dns" {
   source = "./modules/cloudflare_dns"
-
   cloudflare_zone_id     = var.cloudflare_zone_id
   cloudfront_domain_name = module.cloudfront.distribution_domain_name
 
   depends_on = [module.cloudfront]
-}
+  }
