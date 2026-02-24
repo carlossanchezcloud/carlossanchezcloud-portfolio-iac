@@ -68,41 +68,10 @@ resource "aws_iam_policy" "github_actions_policy" {
 
       # Permiso para manejar los buckets S3
       {
-        Sid    = "S3Access"
-        Effect = "Allow"
-        Action = [
-          "s3:GetObject",
-          "s3:PutObject",
-          "s3:DeleteObject",
-          "s3:ListBucket",
-          "s3:GetBucketLocation",
-          "s3:GetBucketVersioning",
-          "s3:PutBucketVersioning",
-          "s3:GetBucketPublicAccessBlock",
-          "s3:PutBucketPublicAccessBlock",
-          "s3:GetEncryptionConfiguration",
-          "s3:PutEncryptionConfiguration",
-          "s3:GetBucketPolicy",
-          "s3:PutBucketPolicy",
-          "s3:CreateBucket",
-          "s3:GetLifecycleConfiguration",
-          "s3:PutLifecycleConfiguration",
-          "s3:GetBucketAcl",
-          "s3:PutBucketAcl",
-          "s3:GetBucketCORS",
-          "s3:PutBucketCORS",
-          "s3:GetBucketWebsite",
-          "s3:PutBucketWebsite",
-          "s3:GetBucketLogging",
-          "s3:GetBucketRequestPayment",
-          "s3:GetBucketTagging",
-          "s3:PutBucketTagging",
-          "s3:GetAccelerateConfiguration",
-          "s3:GetBucketObjectLockConfiguration",
-          "s3:GetBucketOwnershipControls",
-          "s3:PutBucketOwnershipControls"
-        ]
-        Resource = [
+  Sid    = "S3Access"
+  Effect = "Allow"
+  Action = ["s3:*"]
+  Resource = [
           "arn:aws:s3:::carlossanchezcloud-website-prod",
           "arn:aws:s3:::carlossanchezcloud-website-prod/*",
           "arn:aws:s3:::carlossanchezcloud-tfstate-prod",
