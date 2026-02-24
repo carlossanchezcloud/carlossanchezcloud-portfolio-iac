@@ -1,0 +1,75 @@
+# .github/workflows/infra-deploy.yml
+# Pipeline de infraestructura — Terraform
+# Se ejecuta cuando hay cambios en archivos .tf
+
+name: Infrastructure Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.tf'
+      - '**.tfvars.example'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.tf'
+
+# Permisos necesarios para OIDC
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  terraform:
+    name: Terraform Plan & Apply
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Descarga el código ──
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Autentica con AWS via OIDC ──
+      #    Sin Access Keys permanentes
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      # ── 3. Instala Terraform ──
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "~> 1.10"
+
+      # ── 4. Inicializa el backend S3 ──
+      - name: Terraform Init
+        run: terraform init
+
+      # ── 5. Valida la sintaxis ──
+      - name: Terraform Validate
+        run: terraform validate
+
+      # ── 6. Muestra los cambios ──
+      - name: Terraform Plan
+        run: terraform plan
+        env:
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TF_VAR_domain_name: "carlossanchezcloud.com"
+          TF_VAR_bucket_name: "carlossanchezcloud-website-prod"
+          TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+
+      # ── 7. Aplica los cambios ──
+      #    Solo en push a main, no en PRs
+      - name: Terraform Apply
+        if: github.event_name == 'push'
+        run: terraform apply -auto-approve
+        env:
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TF_VAR_domain_name: "carlossanchezcloud.com"
+          TF_VAR_bucket_name: "carlossanchezcloud-website-prod"
+          TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
