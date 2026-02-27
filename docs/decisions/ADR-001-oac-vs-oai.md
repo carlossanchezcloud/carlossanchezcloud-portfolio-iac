@@ -11,9 +11,9 @@ Existen dos mecanismos: OAI (Origin Access Identity) y OAC (Origin Access Contro
 Se usa **OAC (Origin Access Control)** en lugar de OAI.
 
 ## Razones
-- OAI está en deprecación desde 2022 — AWS recomienda migrar a OAC
+- OAI está en deprecación desde 2022 - AWS recomienda migrar a OAC
 - OAC soporta SSE-KMS para encriptación avanzada
-- OAC usa firma SigV4 — más seguro que OAI
+- OAC usa firma SigV4 - más seguro que OAI
 - OAC es el estándar actual para nuevas implementaciones
 
 ## Consecuencias
