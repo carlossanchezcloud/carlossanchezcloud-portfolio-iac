@@ -17,7 +17,8 @@ Se usa **OAC (Origin Access Control)** en lugar de OAI.
 - OAC es el estándar actual para nuevas implementaciones
 
 ## Consecuencias
-✅ Mayor seguridad con autenticación SigV4
-✅ Soporte futuro garantizado por AWS
-✅ Compatible con encriptación SSE-KMS
-❌ Configuración ligeramente más compleja que OAI
+
+- **✅ Mayor seguridad** con autenticación SigV4  
+- **✅ Soporte futuro garantizado** por AWS  
+- **✅ Compatible** con encriptación SSE-KMS  
+- **❌ Configuración ligeramente más compleja** que OAI
