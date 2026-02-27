@@ -5,17 +5,17 @@
 # Plugins y módulos descargados
 .terraform/
 
-# Archivos de estado local — NUNCA al repo
+# Archivos de estado local - NUNCA al repo
 *.tfstate
 *.tfstate.*
 *.tfstate.backup
 .terraform.tfstate.lock.info
 
-# Plan binario — puede contener secretos
+# Plan binario - puede contener secretos
 *.tfplan
 *.plan
 
-# Archivos de variables con secretos — CRÍTICO
+# Archivos de variables con secretos - CRÍTICO
 *.tfvars
 !terraform.tfvars.example
 

@@ -67,14 +67,14 @@ resource "aws_cloudfront_distribution" "website" {
   price_class         = "PriceClass_All"
   aliases             = var.domain_aliases
 
-  # ── Origen: S3 privado via OAC ──
+  # Origen: S3 privado via OAC
   origin {
     domain_name              = var.bucket_domain_name
     origin_id                = "S3-${var.bucket_id}"
     origin_access_control_id = aws_cloudfront_origin_access_control.website.id
   }
 
-  # ── Comportamiento del caché ──
+  # Comportamiento del caché
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
@@ -90,7 +90,7 @@ resource "aws_cloudfront_distribution" "website" {
     compress = true
   }
 
-  # ── Páginas de error personalizadas ──
+  # Páginas de error personalizadas
   # Si alguien va a una ruta que no existe
   # muestra tu index.html en lugar de error XML de S3
   custom_error_response {
@@ -107,14 +107,14 @@ resource "aws_cloudfront_distribution" "website" {
     error_caching_min_ttl = 10
   }
 
-  # ── Certificado SSL ──
+  # Certificado SSL
   viewer_certificate {
     acm_certificate_arn      = var.certificate_arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }
 
-  # ── Restricciones geográficas ──
+  # Restricciones geográficas
   # Sin restricciones — acceso global
   restrictions {
     geo_restriction {

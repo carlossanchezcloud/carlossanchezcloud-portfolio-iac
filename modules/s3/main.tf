@@ -60,7 +60,7 @@ resource "aws_s3_bucket_versioning" "website" {
 }
 
 # ─────────────────────────────────────────
-# 5. Lifecycle — Limpieza automática
+# 5. Lifecycle - Limpieza automática
 #    Borra versiones viejas después de
 #    30 días para no acumular costos
 # ─────────────────────────────────────────

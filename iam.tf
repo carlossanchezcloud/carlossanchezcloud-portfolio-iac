@@ -1,6 +1,6 @@
 # iam.tf
 # Conexión segura entre GitHub Actions y AWS
-# Método: OIDC — sin llaves permanentes
+# Método: OIDC - sin llaves permanentes
 
 # ─────────────────────────────────────────
 # 1. Registra GitHub como identidad

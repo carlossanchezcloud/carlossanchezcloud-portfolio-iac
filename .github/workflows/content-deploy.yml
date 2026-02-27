@@ -1,5 +1,5 @@
 # .github/workflows/content-deploy.yml
-# Pipeline de contenido — Sitio web
+# Pipeline de contenido - Sitio web
 # Se ejecuta cuando hay cambios en la carpeta website/
 
 name: Content Deploy
@@ -22,18 +22,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ── 1. Descarga el código ──
+      # 1. Descarga el código
       - name: Checkout
         uses: actions/checkout@v4
 
-      # ── 2. Autentica con AWS via OIDC ──
+      # 2. Autentica con AWS via OIDC
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      # ── 3. Sube archivos a S3 ──
+      # 3. Sube archivos a S3
       #    Sincroniza solo los cambios
       #    Borra archivos que ya no existen
       - name: Sync to S3
@@ -51,7 +51,7 @@ jobs:
             --include "*.html" \
             --exclude "*"
 
-      # ── 4. Invalida el caché de CloudFront ──
+      # 4. Invalida el caché de CloudFront
       #    Fuerza a CloudFront a servir
       #    los archivos nuevos inmediatamente
       - name: Invalidate CloudFront Cache
