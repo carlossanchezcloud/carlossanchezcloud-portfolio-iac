@@ -20,7 +20,9 @@
 
 ## 📋 Descripción
 
-Infraestructura como código (IaC) para el despliegue de un portafolio estático personal sobre AWS, construida con Terraform modular bajo el framework **AWS Well-Architected**. El proyecto implementa seguridad de nivel empresarial, automatización total Zero-Touch via GitHub Actions y optimización de costos FinOps.
+Diseñé y desplegué una plataforma web 100% automatizada sobre AWS utilizando Terraform modular, con autenticación OIDC sin credenciales estáticas, arquitectura segura basada en Origin Access Control (OAC) y pipelines Zero-Secrets en GitHub Actions.
+
+La infraestructura sigue principios de AWS Well-Architected, es completamente reproducible en un solo comando y opera con un costo optimizado inferior a $0.20 USD/mes bajo enfoque FinOps.
 
 ---
 
@@ -38,6 +40,17 @@ Infraestructura como código (IaC) para el despliegue de un portafolio estático
 - **Wildcard SSL en ACM** — Un solo certificado cubre el dominio raíz y cualquier subdominio futuro
 - **DNS automatizado** - Registros CNAME gestionados via Cloudflare API desde Terraform
 - **Security Headers** - HSTS, X-Frame-Options, Content-Type-Options aplicados en cada respuesta
+
+---
+
+## 📈 Impacto Arquitectónico
+
+- 100% automatización end-to-end (infraestructura y despliegue de contenido)
+- 0 credenciales estáticas mediante federación OIDC (Zero-Secrets)
+- Infraestructura completamente reproducible con terraform apply
+- Tiempo promedio de despliegue inferior a 3 minutos
+- Superficie de ataque reducida mediante OAC y bucket privado sin acceso público
+- Costo operativo optimizado bajo enfoque FinOps: < $0.20 USD/mes
 
 ---
 
