@@ -37,7 +37,7 @@ La infraestructura sigue principios de AWS Well-Architected, es completamente re
 - **OAC sobre OAI** - Origin Access Control reemplaza al OAI deprecado. Mayor seguridad con soporte SSE-KMS y firma SigV4
 - **S3 Native Locking** - Terraform >= 1.10 elimina la dependencia de DynamoDB para el tfstate lock
 - **OIDC Zero-Secrets** - GitHub Actions se autentica en AWS sin Access Keys permanentes. Token temporal por ejecución
-- **Wildcard SSL en ACM** — Un solo certificado cubre el dominio raíz y cualquier subdominio futuro
+- **Wildcard SSL en ACM** - Un solo certificado cubre el dominio raíz y cualquier subdominio futuro
 - **DNS automatizado** - Registros CNAME gestionados via Cloudflare API desde Terraform
 - **Security Headers** - HSTS, X-Frame-Options, Content-Type-Options aplicados en cada respuesta
 
@@ -173,9 +173,9 @@ Autenticación via **OIDC** - sin Access Keys permanentes en GitHub Secrets.
 
 ## 📐 Architecture Decision Records
 
-- [ADR-001 — OAC sobre OAI](docs/decisions/ADR-001-oac-vs-oai.md)
-- [ADR-002 — S3 Native Locking sin DynamoDB](docs/decisions/ADR-002-s3-native-locking.md)
-- [ADR-003 — Cloudflare DNS + ACM](docs/decisions/ADR-003-cloudflare-dns.md)
+- [ADR-001 - OAC sobre OAI](docs/decisions/ADR-001-oac-vs-oai.md)
+- [ADR-002 - S3 Native Locking sin DynamoDB](docs/decisions/ADR-002-s3-native-locking.md)
+- [ADR-003 - Cloudflare DNS + ACM](docs/decisions/ADR-003-cloudflare-dns.md)
 
 ---
 
