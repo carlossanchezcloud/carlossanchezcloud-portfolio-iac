@@ -23,3 +23,21 @@ DNS via Cloudflare API desde Terraform.
 
 ## Configuración
 ```hcl
+# Validación automática del certificado via Cloudflare API
+resource "cloudflare_record" "acm_validation" {
+  zone_id         = var.cloudflare_zone_id
+  name            = each.value.name
+  content         = each.value.value
+  type            = each.value.type
+  proxied         = false  # Obligatorio para validación ACM
+  allow_overwrite = true
+}
+```
+
+## Consecuencias
+
+**✅ Certificado SSL gratuito** gestionado por AWS ACM  
+**✅ DNS automatizado** via Cloudflare API + Terraform  
+**✅ Sin costo de Route53** - ahorro $0.50/mes  
+**✅ Validación automática** sin intervención manual  
+**❌ Proxy de Cloudflare OFF** - sin WAF ni cache edge de Cloudflare

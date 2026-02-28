@@ -16,7 +16,7 @@ eliminando la dependencia de DynamoDB.
 - Terraform 1.10 introdujo locking nativo en S3 en noviembre 2024
 - DynamoDB agrega costo y complejidad innecesarios
 - Un solo desarrollador no necesita protección contra escrituras concurrentes
-- S3 native locking usa conditional writes — igual de confiable
+- S3 native locking usa conditional writes - igual de confiable
 
 ## Configuración
 ```hcl
@@ -34,7 +34,7 @@ terraform {
 ## Consecuencias
 
 **✅ Sin costo adicional** de DynamoDB  
-**✅ Arquitectura más simple** — menos recursos  
+**✅ Arquitectura más simple** - menos recursos  
 **✅ Estándar moderno** de Terraform >= 1.10  
 **❌ Requiere** Terraform >= 1.10
 
