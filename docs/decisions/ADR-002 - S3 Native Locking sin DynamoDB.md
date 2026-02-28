@@ -33,8 +33,8 @@ terraform {
 
 ## Consecuencias
 
-✅ Sin costo adicional de DynamoDB
-✅ Arquitectura más simple
-✅ Estándar moderno de Terraform
-❌ Requiere Terraform >= 1.10
+**✅ Sin costo adicional** de DynamoDB  
+**✅ Arquitectura más simple** — menos recursos  
+**✅ Estándar moderno** de Terraform >= 1.10  
+**❌ Requiere** Terraform >= 1.10
 
