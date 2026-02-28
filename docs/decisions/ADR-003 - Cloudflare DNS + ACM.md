@@ -19,7 +19,7 @@ DNS via Cloudflare API desde Terraform.
 - ACM es gratuito para certificados públicos en AWS
 - El proxy de Cloudflare debe estar OFF para que ACM valide correctamente
 - La API de Cloudflare permite automatizar registros DNS desde Terraform
-- Sin Route53 — ahorro de $0.50/mes por hosted zone
+- Sin Route53 - ahorro de $0.50/mes por hosted zone
 
 ## Configuración
 ```hcl
