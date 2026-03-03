@@ -45,11 +45,9 @@ jobs:
           
           # HTML sin caché para siempre tener
           # la versión más reciente
-          aws s3 sync ./website s3://carlossanchezcloud-website-prod \
-            --delete \
-            --cache-control "no-cache, no-store, must-revalidate" \
-            --include "*.html" \
-            --exclude "*"
+          aws s3 cp ./website/index.html \
+              s3://carlossanchezcloud-website-prod/index.html \
+              --cache-control "no-cache, no-store, must-revalidate"
 
       # 4. Invalida el caché de CloudFront
       #    Fuerza a CloudFront a servir
