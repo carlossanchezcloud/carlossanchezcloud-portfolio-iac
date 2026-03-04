@@ -185,8 +185,7 @@ Autenticación via **OIDC** - sin Access Keys permanentes en GitHub Secrets.
 AWS Certified Solutions Architect | Cloud & Network Architect
 Arquitecturas AWS seguras, resilientes y automatizadas | IaC (Terraform) · FinOps
 
-- 🌐 [carlossanchezcloud.com](https://carlossanchezcloud.com)
-- [![SHARE ON LINKEDIN](https://img.shields.io/badge/SHARE%20ON-LINKEDIN-0077B5?style=for-the-badge)](https://www.linkedin.com/in/carlossanchez-ti) [![SHARE ON BLUESKY](https://img.shields.io/badge/SHARE%20ON-BLUESKY-0085ff?style=for-the-badge&logo=bluesky&logoColor=white)](https://bsky.app)
+🌐 [carlossanchezcloud.com](https://carlossanchezcloud.com)- [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlossanchez-ti)
 
 ---
 
