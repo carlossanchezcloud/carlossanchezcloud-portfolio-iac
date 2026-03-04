@@ -923,7 +923,10 @@
       }
     });
   }, { threshold: 0.5 });
-  document.querySelectorAll('.result-num').forEach(el => counterObs.observe(el));
+  document.querySelectorAll('.result-num').forEach(el => {
+  if (el.textContent.includes('/')) return;
+  counterObs.observe(el);
+  });
 </script>
 </body>
 </html>
