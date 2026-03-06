@@ -1,7 +1,7 @@
 
 # backend.tf
 # Le dice a Terraform dónde guardar el tfstate
-# Apunta al bucket S3 que creaste manualmente
+# Apunta al bucket S3 que se creo manualmente
 
 terraform {
   backend "s3" {

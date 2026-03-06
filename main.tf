@@ -11,7 +11,7 @@ module "acm" {
 }
 
 # ─────────────────────────────────────────
-# 2. Módulo S3 — Solo el bucket sin policy
+# 2. Módulo S3 - Solo el bucket sin policy
 # ─────────────────────────────────────────
 module "s3" {
   source = "./modules/s3"
@@ -36,7 +36,7 @@ module "cloudfront" {
 }
 
 # ─────────────────────────────────────────
-# 4. Bucket Policy — Fuera del módulo S3
+# 4. Bucket Policy - Fuera del módulo S3
 #    Se crea después de CloudFront
 #    Rompe el ciclo definitivamente
 # ─────────────────────────────────────────

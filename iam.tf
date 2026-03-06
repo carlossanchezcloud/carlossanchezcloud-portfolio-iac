@@ -21,7 +21,7 @@ resource "aws_iam_openid_connect_provider" "github_oidc" {
 
 # ─────────────────────────────────────────
 # 2. Crea el rol que usará GitHub Actions
-#    Solo funciona desde TU repo y TU branch
+#    Solo funciona desde el repo y el branch
 # ─────────────────────────────────────────
 resource "aws_iam_role" "github_actions_role" {
   name = "carlossanchezcloud-github-actions-role"
