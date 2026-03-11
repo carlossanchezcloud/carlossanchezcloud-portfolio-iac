@@ -177,6 +177,7 @@ Autenticación via **OIDC** - sin Access Keys permanentes en GitHub Secrets.
 - [ADR-001 - OAC sobre OAI](docs/decisions/ADR-001-oac-vs-oai.md)
 - [ADR-002 - S3 Native Locking sin DynamoDB](docs/decisions/ADR-002-s3-native-locking.md)
 - [ADR-003 - Cloudflare DNS + ACM](docs/decisions/ADR-003-cloudflare-dns.md)
+- [ADR-004 - AWS Budget para Control de Costos](docs/decisions/ADR-004-budget-cost-control.md)
 
 ---
 
