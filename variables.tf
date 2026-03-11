@@ -23,7 +23,20 @@ variable "cloudflare_api_token" {
   sensitive   = true
 }
 
-#test
-#test2
-#test3
-#test4
+variable "project_name" {
+  description = "Nombre del proyecto, usado como prefijo en recursos"
+  type        = string
+  default     = "portfolio"
+}
+
+variable "budget_limit_usd" {
+  description = "Límite mensual del budget en USD"
+  type        = string
+  default     = "3"
+}
+
+variable "alert_email" {
+  description = "Email para recibir alertas del budget"
+  type        = string
+  sensitive   = true
+}

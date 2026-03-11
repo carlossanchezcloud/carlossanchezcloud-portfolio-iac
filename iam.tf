@@ -118,6 +118,20 @@ resource "aws_iam_policy" "github_actions_policy" {
           "iam:ListAttachedRolePolicies"
         ]
         Resource = "*"
+      },
+# Permiso para gestionar AWS Budgets
+      {
+        Sid    = "BudgetsAccess"
+        Effect = "Allow"
+        Action = [
+          "budgets:CreateBudget",
+          "budgets:ModifyBudget",
+          "budgets:DeleteBudget",
+          "budgets:ViewBudget",
+          "budgets:DescribeBudgetAction"
+        ]
+        Resource = "*"
+
       }
     ]
   })
@@ -130,3 +144,4 @@ resource "aws_iam_role_policy_attachment" "github_actions_attach" {
   role       = aws_iam_role.github_actions_role.name
   policy_arn = aws_iam_policy.github_actions_policy.arn
 }
+

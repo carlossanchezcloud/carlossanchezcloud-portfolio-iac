@@ -2,3 +2,8 @@ domain_name          = "tu-dominio.com"
 bucket_name          = "tu-bucket-nombre-website-prod"
 cloudflare_zone_id   = "CLOUDFLARE_ZONE_ID_AQUI"
 cloudflare_api_token = "CLOUDFLARE_API_TOKEN_AQUI"
+
+# Budget
+project_name         = "tu-proyecto-portfolio"
+budget_limit_usd     = "3"
+alert_email          = "tu-email@ejemplo.com"
