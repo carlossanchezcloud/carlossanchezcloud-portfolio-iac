@@ -105,6 +105,7 @@ carlossanchezcloud-portfolio-iac/
 │   ├── style.css                 # Estilos
 │   └── *.js                      # Scripts
 ├── backend.tf                    # S3 remote state + native locking
+├── budgets.tf                    # Alerta de costos mensual ($3 USD, 80%)
 ├── iam.tf                        # OIDC provider + rol GitHub Actions
 ├── main.tf                       # Orquestación de módulos
 ├── variables.tf                  # Variables globales
