@@ -62,6 +62,9 @@ jobs:
           TF_VAR_domain_name: "carlossanchezcloud.com"
           TF_VAR_bucket_name: "carlossanchezcloud-website-prod"
           TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          TF_VAR_project_name: "carlossanchezcloud-portfolio"
+          TF_VAR_budget_limit_usd: "3"
+          TF_VAR_alert_email: ${{ secrets.ALERT_EMAIL }}
 
       # 7. Aplica los cambios
       #    Solo en push a main, no en PRs
@@ -73,3 +76,6 @@ jobs:
           TF_VAR_domain_name: "carlossanchezcloud.com"
           TF_VAR_bucket_name: "carlossanchezcloud-website-prod"
           TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          TF_VAR_project_name: "carlossanchezcloud-portfolio"
+          TF_VAR_budget_limit_usd: "3"
+          TF_VAR_alert_email: ${{ secrets.ALERT_EMAIL }}
