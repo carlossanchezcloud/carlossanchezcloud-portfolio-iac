@@ -128,7 +128,8 @@ resource "aws_iam_policy" "github_actions_policy" {
           "budgets:ModifyBudget",
           "budgets:DeleteBudget",
           "budgets:ViewBudget",
-          "budgets:DescribeBudgetAction"
+          "budgets:DescribeBudgetAction",
+          "budgets:ListTagsForResource"
         ]
         Resource = "*"
 
