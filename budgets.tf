@@ -17,4 +17,12 @@ resource "aws_budgets_budget" "portfolio_monthly" {
     notification_type          = "ACTUAL"
     subscriber_email_addresses = [var.alert_email]
   }
+
+tags = {
+    Name        = "${var.project_name}-monthly-budget"
+    Project     = "carlossanchezcloud"
+    Environment = "prod"
+    ManagedBy   = "terraform"
+  }
 }
+
